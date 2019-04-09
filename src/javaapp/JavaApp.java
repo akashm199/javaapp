@@ -72,7 +72,7 @@ public class JavaApp {
                 }
             }
         }
-        System.out.println(":: " + Arrays.toString(array));
+//        System.out.println(":: " + Arrays.toString(array));
         System.out.println("Third second largest number is:: " + array[size - 2]);
     }
 }

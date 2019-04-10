@@ -21,7 +21,7 @@ public class JavaApp {
         System.out.println("Author :: Akash Mishra");
         System.out.println("This is A Test Enviroment.");
         //***********************Highest/Lowest Number from an array//
-        int[] inputArray = {0, -1, 129, -1, 22, 20, 31, 20, 18, 92, 129, 2, 43, 20, 2};
+        int[] inputArray = {210, 210, 129, 1, 22, 20, 31, 20, 18, 92, 129, 2, 43, 20, 2};
         Arrays.sort(inputArray);
         System.out.println("Input Array " + Arrays.toString(inputArray));
         getHighestNumber(inputArray);
@@ -62,17 +62,16 @@ public class JavaApp {
     }
 
     public static void getSecondHighest(int[] array) {
-        int size = array.length, temp;
-        for (int i = 0; i < size; i++) {
-            for (int j = i + 1; j < size; j++) {
-                if (array[i] > array[j]) {
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                }
+        int max = array[0], secondmax = 0;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                secondmax = max;
+                max = array[i];
+            } else if (array[i] != max && array[i] > secondmax) {
+                secondmax = array[i];
             }
         }
-//        System.out.println(":: " + Arrays.toString(array));
-        System.out.println("Third second largest number is:: " + array[size - 2]);
+        System.out.println("Second Max:: " + secondmax);
+        System.out.println("Max:: " + max);
     }
 }
